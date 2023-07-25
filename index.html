@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>OR's Generator</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="STYLE.CSS">
+</head>
+
+<body class="bg-light">
+
+  <div class="container col-md-12">
+    <div class="py-4 text-center">
+      <img class="inline mb-4" src="https://tpv-sil.com/wp-content/uploads/2017/03/TPV-Mediana.png" alt="" width="72"
+        height="72">
+      <h2>Orders Release Generator</h2>
+      <p class="lead">Developed by TPV team to generate orders in XML format. It is important to respect upper and lower case letters.</p>
+    </div>
+
+    <div class="col-md-12 order-md-1 mx-auto">
+
+      <div class="row border mx-4">
+        <div class="col-md-6 mb-1">
+          <label class="text-center font-weight-bold" for="filename">File Name:</label>
+          <input type="text" class="form-control" id="filename" placeholder="" value="FILENAME" required="">
+        </div>
+        <div class="col-md-6 mb-1 mt-4">
+          <button class="btn btn-primary btn-lg btn-block" onclick="run()">Download XML</button>
+        </div>
+      </div>
+      <br>
+      <div class="bs-example">
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <a href="#home" class="nav-link active font-weight-bold" data-toggle="tab">Global Data</a>
+          </li>
+          <li class="nav-item">
+            <a href="#profile" class="nav-link font-weight-bold" data-toggle="tab">Orders Release</a>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane fade show active" id="home">
+            <div class="container2">
+              <br>
+              <div class="row my-1 font-weight-bold">
+                <div class="col-md-2 mb-1">
+                  <label class="text-center" for="dominio">Domain</label>
+                  <input type="text" class="form-control" id="dominio" placeholder="" value="" required="">
+                </div>
+                <div class="col-md-2 mb-1">
+                  <label class="text-center" for="origen">Source</label>
+                  <input type="text" class="form-control" id="origen" placeholder="" value="" required="">
+                </div>
+                <div class="col-md-2 mb-1">
+                  <label class="text-center" for="itinerario">Itinerary</label>
+                  <input type="text" class="form-control" id="itinerario" placeholder="" value=""
+                    required="">
+                </div>
+                <div class="col-md-3 mb-4">
+                  <label class="text-center" for="early">Early Pickup</label>
+                  <input type="date" class="form-control" id="early" placeholder="" value="2023-11-07" required="">
+                  <input type="time" class="form-control" id="earlytime" placeholder="" value="13:00" required="">
+                </div>
+                <div class="col-md-3 mb-4">
+                  <label class="text-center" for="late">Late Delivery</label>
+                  <input type="date" class="form-control" id="late" placeholder="" value="2023-11-08" required="">
+                  <input type="time" class="form-control" id="latetime" placeholder="" value="13:00" required="">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="profile">
+            <div class="container2">
+              <h5 class="text-center my-4">(insert values without domain)</h5>
+              <div class="row font-weight-bold">
+                <div class="col-md-2 mb-2">
+                  <label class="text-center" for="xid1">Order XID</label>
+                  <input type="text" class="form-control" id="xid1" placeholder="" value="" required="">
+                </div>
+                <div class="col-md-1 mb-1">
+                  <label class="text-center" for="destino1">Destiny</label>
+                  <input type="text" class="form-control" id="destino1" placeholder="" value="" required="">
+                </div>
+                <div class="col-md-2 mb-1">
+                  <label class="text-center" for="pi1">Packaged Item</label>
+                  <input type="text" class="form-control" id="pi1" placeholder="" value="" required="">
+                </div>
+                <div class="col-md-1 mb-1">
+                  <label class="text-center" for="cantidad1">Quantity</label>
+                  <input type="text" class="form-control" id="cantidad1" placeholder="" value="" required="">
+                </div>
+                <div class="col-md-2 mb-1">
+                  <label class="text-center" for="thu1">THU</label>
+                  <input type="text" class="form-control" id="thu1" placeholder="" value="" required="">
+                </div>
+                <div class="col-md-3 mb-1">
+                  <label class="text-center" for="config1">Order Configuration</label>
+                  <input type="text" class="form-control" id="config1" placeholder="" value="" required="">
+                  </div>
+                </div>
+              <div class="row font-weight-bold">
+                <div class="col-md-2 mb-2">
+                  <input type="text" class="form-control" id="xid2" placeholder="" value="" required="">
+                </div>
+                <div class="col-md-1 mb-1">
+                  <input type="text" class="form-control" id="destino2" placeholder="" value="" required="">
+                </div>
+                <div class="col-md-2 mb-1">
+                  <input type="text" class="form-control" id="pi2" placeholder="" value="" required="">
+                </div>
+                <div class="col-md-1 mb-1">
+                  <input type="text" class="form-control" id="cantidad2" placeholder="" value="" required="">
+                </div>
+                <div class="col-md-2 mb-1">
+                  <input type="text" class="form-control" id="thu2" placeholder="" value="" required="">
+                </div>
+                <div class="col-md-3 mb-1">
+                  <input type="text" class="form-control" id="config2" placeholder="" value="" required="">
+                </div>
+                </div>
+                <div class="row font-weight-bold">
+                  <div class="col-md-2 mb-2">
+                    <input type="text" class="form-control" id="xid3" placeholder="" value="" required="">
+                  </div>
+                  <div class="col-md-1 mb-1">
+                    <input type="text" class="form-control" id="destino3" placeholder="" value="" required="">
+                  </div>
+                  <div class="col-md-2 mb-1">
+                    <input type="text" class="form-control" id="pi3" placeholder="" value="" required="">
+                  </div>
+                  <div class="col-md-1 mb-1">
+                    <input type="text" class="form-control" id="cantidad3" placeholder="" value="" required="">
+                  </div>
+                  <div class="col-md-2 mb-1">
+                    <input type="text" class="form-control" id="thu3" placeholder="" value="" required="">
+                  </div>
+                  <div class="col-md-3 mb-1">
+                    <input type="text" class="form-control" id="config3" placeholder="" value="" required="">
+                  </div>
+                </div>
+                  <div class="row font-weight-bold">
+                    <div class="col-md-2 mb-2">
+                      <input type="text" class="form-control" id="xid4" placeholder="" value="" required="">
+                    </div>
+                    <div class="col-md-1 mb-1">
+                      <input type="text" class="form-control" id="destino4" placeholder="" value="" required="">
+                    </div>
+                    <div class="col-md-2 mb-1">
+                      <input type="text" class="form-control" id="pi4" placeholder="" value="" required="">
+                    </div>
+                    <div class="col-md-1 mb-1">
+                      <input type="text" class="form-control" id="cantidad4" placeholder="" value="" required="">
+                    </div>
+                    <div class="col-md-2 mb-1">
+                      <input type="text" class="form-control" id="thu4" placeholder="" value="" required="">
+                    </div>
+                    <div class="col-md-3 mb-1">
+                      <input type="text" class="form-control" id="config4" placeholder="" value="" required="">
+                    </div>
+                  </div>
+                    <div class="row font-weight-bold">
+                      <div class="col-md-2 mb-2">
+                        <input type="text" class="form-control" id="xid5" placeholder="" value="" required="">
+                      </div>
+                      <div class="col-md-1 mb-1">
+                        <input type="text" class="form-control" id="destino5" placeholder="" value="" required="">
+                      </div>
+                      <div class="col-md-2 mb-1">
+                        <input type="text" class="form-control" id="pi5" placeholder="" value="" required="">
+                      </div>
+                      <div class="col-md-1 mb-1">
+                        <input type="text" class="form-control" id="cantidad5" placeholder="" value="" required="">
+                      </div>
+                      <div class="col-md-2 mb-1">
+                        <input type="text" class="form-control" id="thu5" placeholder="" value="" required="">
+                      </div>
+                      <div class="col-md-3 mb-1">
+                        <input type="text" class="form-control" id="config5" placeholder="" value="" required="">
+                      </div>
+                    </div>
+                      <div class="row font-weight-bold">
+                        <div class="col-md-2 mb-2">
+                          <input type="text" class="form-control" id="xid6" placeholder="" value="" required="">
+                        </div>
+                        <div class="col-md-1 mb-1">
+                          <input type="text" class="form-control" id="destino6" placeholder="" value="" required="">
+                        </div>
+                        <div class="col-md-2 mb-1">
+                          <input type="text" class="form-control" id="pi6" placeholder="" value="" required="">
+                        </div>
+                        <div class="col-md-1 mb-1">
+                          <input type="text" class="form-control" id="cantidad6" placeholder="" value="" required="">
+                        </div>
+                        <div class="col-md-2 mb-1">
+                          <input type="text" class="form-control" id="thu6" placeholder="" value="" required="">
+                        </div>
+                        <div class="col-md-3 mb-1">
+                          <input type="text" class="form-control" id="config6" placeholder="" value="" required="">
+                        </div>
+                      </div>
+                        <div class="row font-weight-bold">
+                          <div class="col-md-2 mb-2">
+                            <input type="text" class="form-control" id="xid7" placeholder="" value="" required="">
+                          </div>
+                          <div class="col-md-1 mb-1">
+                            <input type="text" class="form-control" id="destino7" placeholder="" value="" required="">
+                          </div>
+                          <div class="col-md-2 mb-1">
+                            <input type="text" class="form-control" id="pi7" placeholder="" value="" required="">
+                          </div>
+                          <div class="col-md-1 mb-1">
+                            <input type="text" class="form-control" id="cantidad7" placeholder="" value="" required="">
+                          </div>
+                          <div class="col-md-2 mb-1">
+                            <input type="text" class="form-control" id="thu7" placeholder="" value="" required="">
+                          </div>
+                          <div class="col-md-3 mb-1">
+                            <input type="text" class="form-control" id="config7" placeholder="" value="" required="">
+                          </div>
+                        </div>
+                          <div class="row font-weight-bold">
+                            <div class="col-md-2 mb-2">
+                              <input type="text" class="form-control" id="xid8" placeholder="" value="" required="">
+                            </div>
+                            <div class="col-md-1 mb-1">
+                              <input type="text" class="form-control" id="destino8" placeholder="" value="" required="">
+                            </div>
+                            <div class="col-md-2 mb-1">
+                              <input type="text" class="form-control" id="pi8" placeholder="" value="" required="">
+                            </div>
+                            <div class="col-md-1 mb-1">
+                              <input type="text" class="form-control" id="cantidad8" placeholder="" value=""
+                                required="">
+                            </div>
+                            <div class="col-md-2 mb-1">
+                              <input type="text" class="form-control" id="thu8" placeholder="" value="" required="">
+                            </div>
+                            <div class="col-md-3 mb-1">
+                              <input type="text" class="form-control" id="config8" placeholder="" value="" required="">
+                            </div>
+                          </div>
+                          <div class="row font-weight-bold">
+                            <div class="col-md-2 mb-2">
+                              <input type="text" class="form-control" id="xid9" placeholder="" value="" required="">
+                            </div>
+                            <div class="col-md-1 mb-1">
+                              <input type="text" class="form-control" id="destino9" placeholder="" value="" required="">
+                            </div>
+                            <div class="col-md-2 mb-1">
+                              <input type="text" class="form-control" id="pi9" placeholder="" value="" required="">
+                            </div>
+                            <div class="col-md-1 mb-1">
+                              <input type="text" class="form-control" id="cantidad9" placeholder="" value=""
+                                required="">
+                            </div>
+                            <div class="col-md-2 mb-1">
+                              <input type="text" class="form-control" id="thu9" placeholder="" value="" required="">
+                            </div>
+                            <div class="col-md-3 mb-1">
+                              <input type="text" class="form-control" id="config9" placeholder="" value="" required="">
+                            </div>
+                          </div>
+                          <div class="row font-weight-bold">
+                            <div class="col-md-2 mb-2">
+                              <input type="text" class="form-control" id="xid10" placeholder="" value="" required="">
+                            </div>
+                            <div class="col-md-1 mb-1">
+                              <input type="text" class="form-control" id="destino10" placeholder="" value=""
+                                required="">
+                            </div>
+                            <div class="col-md-2 mb-1">
+                              <input type="text" class="form-control" id="pi10" placeholder="" value="" required="">
+                            </div>
+                            <div class="col-md-1 mb-1">
+                              <input type="text" class="form-control" id="cantidad10" placeholder="" value=""
+                                required="">
+                            </div>
+                            <div class="col-md-2 mb-1">
+                              <input type="text" class="form-control" id="thu10" placeholder="" value="" required="">
+                            </div>
+                            <div class="col-md-3 mb-1">
+                              <input type="text" class="form-control" id="config10" placeholder="" value="" required="">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <BR>
+
+                </div>
+              </div>
+
+
+
+
+
+              <footer class="mt-4 pb-2 text-muted text-center text-small">
+                <p class="mb-1">©2023 TPV-SA</p>
+              </footer>
+            </div>
+
+            <!-- Bootstrap core JavaScript
+    ================================================== -->
+            <!-- Placed at the end of the document so the pages load faster -->
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+              integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+              crossorigin="anonymous"></script>
+            <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+            <script src="../../assets/js/vendor/popper.min.js"></script>
+            <script src="../../dist/js/bootstrap.min.js"></script>
+            <script src="../../assets/js/vendor/holder.min.js"></script>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+            <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+            <div id="16C19434-89DD-590E-0BCB-F34349B69A96"></div>
+            <script src="DATA.JS"></script>
+
+
+
+
+</body>
